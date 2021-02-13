@@ -2,6 +2,7 @@ import React from 'react';
 import { Logo } from '../../../theme/Logo';
 import { MenuContainer } from './styles/MenuContainer';
 import Link from 'next/link';
+import { Button } from '../Button';
 
 
 export default function Menu() {
@@ -27,8 +28,8 @@ export default function Menu() {
         <Logo />
       </MenuContainer.Left>
       <MenuContainer.Center>
-        {links.map(({ text, url}, i) => (
-          <li key={`${text}-${i}`}>
+        {links.map(({ text, url}) => (
+          <li key={url}>
             <Link href={url}>
               {text}
             </Link>
@@ -36,12 +37,12 @@ export default function Menu() {
         ))}
       </MenuContainer.Center>
       <MenuContainer.Right>
-        <button>
+        <Button ghost variant="secondary.main">
           Entrar
-        </button>
-        <button>
+        </Button>
+        <Button variant="primary.main">
           Cadastrar
-        </button>
+        </Button>
       </MenuContainer.Right>
     </MenuContainer>
   )
