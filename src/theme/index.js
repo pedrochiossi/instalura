@@ -1,46 +1,77 @@
 export const colors = {
-  background: {
-    light: {
-      color: '#FFFFFF',
-    },
-    main: {
-      color: '#F2F2F2',
-    },
-  },
-  borders: {
-    main: {
-      color: '#F1F1F1',
-    },
-  },
-  primary: {
-    main: {
-      color: '#D7385E',
-      contrastText: '#fff',
-    },
-  },
-  secondary: {
-    main: {
-      color: '#FB7B6B',
-      contrastText: '#fff',
-    },
-  },
-  tertiary: {
-    main: {
-      color: '#070C0E',
-      contrastText: '#fff',
-    },
-    light: {
-      color: '#88989E',
-      contrastText: '#fff',
-    },
-  },
   modes: {
-    dark: {},
+    dark: {
+      background: {
+        color: '#030506'
+      },
+      borders: {
+        color: '#181F22'
+      },
+      logo: {
+        color: '#FFFFFF'
+      },
+      primary: {
+        color: '#D7385E',
+        contrastText: '#fff'
+      },
+      secondary: {
+        color: '#FFA59A',
+        contrastText: '#fff'
+      },
+      tertiary: {
+        color: '#FFFFFF',
+        main: {
+          color: '#D5D5D5'
+        } 
+      }
+    },
+    light: {
+      background: {
+        color: '#F2F2F2',
+      },
+      primary: {
+        color: '#D7385E',
+        contrastText: '#fff'
+      },
+      secondary: {
+        color: '#FB7B6B',
+        contrastText: '#fff'
+      },
+      tertiary: {
+        color: '#88989E',
+        contrastText: '#fff',
+        main: {
+          color: '#070C0E',
+          contrastText: '#fff'
+        }
+      },
+      borders: {
+        color: '#F2F2F2',
+      },
+      background: {
+        color: '#FFFFFF'
+      },
+      logo: {
+        color: '#070C0E' 
+      }
+    }
   },
 };
 
-export default {
-  colors,
+const defaults = {
   borderRadius: '8px',
   transition: '200ms ease-in-out',
-};
+  fontFamily: '\'Rubik\', sans-serif'
+}
+
+export const lightTheme = {
+  ...defaults,
+  colors: colors.modes.light
+}
+
+export const darkTheme = {
+  ...defaults,
+  colors: colors.modes.dark
+}
+
+export { GlobalStyle } from './globalStyle';

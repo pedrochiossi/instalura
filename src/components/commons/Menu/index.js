@@ -1,5 +1,5 @@
 import React from 'react';
-import { Logo } from '../../../theme/Logo';
+import Logo from '../../../theme/Logo';
 import { MenuContainer } from './styles/MenuContainer';
 import Link from 'next/link';
 import { Button } from '../Button';
@@ -37,10 +37,10 @@ export default function Menu() {
         ))}
       </MenuContainer.Center>
       <MenuContainer.Right>
-        <Button ghost variant="secondary.main">
+        <Button ghost variant="secondary">
           Entrar
         </Button>
-        <Button variant="primary.main">
+        <Button variant="primary">
           Cadastrar
         </Button>
       </MenuContainer.Right>
