@@ -1,7 +1,9 @@
 import React from 'react';
-import { Logo } from '../../../theme/Logo';
+import Logo from '../../../theme/Logo';
 import { MenuContainer } from './styles/MenuContainer';
 import Link from 'next/link';
+import { Button } from '../Button';
+import Text from '../../foundation/Text';
 
 
 export default function Menu() {
@@ -27,21 +29,23 @@ export default function Menu() {
         <Logo />
       </MenuContainer.Left>
       <MenuContainer.Center>
-        {links.map(({ text, url}, i) => (
-          <li key={`${text}-${i}`}>
-            <Link href={url}>
-              {text}
-            </Link>
+        {links.map(({ text, url}) => (
+          <li key={url}>
+            <Text variant="smallestException" >
+              <Link href={url}>
+                {text}
+              </Link>
+            </Text>
           </li>
         ))}
       </MenuContainer.Center>
       <MenuContainer.Right>
-        <button>
-          Entrar
-        </button>
-        <button>
+        <Button ghost variant="secondary">
+          <Text variant="smallestException">Entrar</Text>
+        </Button>
+        <Button variant="primary">
           Cadastrar
-        </button>
+        </Button>
       </MenuContainer.Right>
     </MenuContainer>
   )

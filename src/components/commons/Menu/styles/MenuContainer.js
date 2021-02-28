@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const MenuContainer = styled.nav`
-  font-family: 'Rubik', sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,20 +25,20 @@ MenuContainer.Center = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 17px;
-  border-top: 1px solid #88989E;
-  border-bottom: 1px solid #88989E;
+  border-top: 1px solid ${({ theme }) => theme.colors.borders.color};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.borders.color};
   padding: 12px;
   
   a {
     text-align: center;
     display: block;
     text-decoration: none;
-    color: #88989E;
+    color: ${({ theme }) => theme.colors.tertiary.color};
     transition: 200ms ease-in-out;
 
     &:hover, &:focus {
       font-weight: 500;
-      color: #070C0E;
+      color: ${({ theme }) => theme.colors.tertiary.main.color};
     }
   }
 `;
