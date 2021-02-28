@@ -6,10 +6,10 @@ const { breakpoints: defaultBreakpoints } = defaults;
 export function breakpoints(cssByBreakpoints) {
   const breakpointsMap = new Map(Object.entries(cssByBreakpoints));
   let cssMediaQueries = [];
-  breakpointsMap.forEach((key, value) => {
+  breakpointsMap.forEach((value, key) => {
     cssMediaQueries.push(css`
-        @media screen and (min-width: ${defaultBreakpoints[value]}px) {
-          ${key}
+        @media screen and (min-width: ${defaultBreakpoints[key]}px) {
+          ${value}
         }
       `
     );
