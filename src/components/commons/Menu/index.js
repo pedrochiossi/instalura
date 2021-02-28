@@ -41,7 +41,7 @@ export default function Menu() {
       </MenuContainer.Center>
       <MenuContainer.Right>
         <Button ghost variant="secondary">
-          <Text variant="smallestException">Entrar</Text>
+          Entrar
         </Button>
         <Button variant="primary">
           Cadastrar
