@@ -1,3 +1,5 @@
+import { typographyVariants } from './typographyVariants';
+
 export const colors = {
   modes: {
     dark: {
@@ -61,7 +63,8 @@ export const colors = {
 const defaults = {
   borderRadius: '8px',
   transition: '200ms ease-in-out',
-  fontFamily: '\'Rubik\', sans-serif'
+  fontFamily: '\'Rubik\', sans-serif',
+  typographyVariants
 }
 
 export const lightTheme = {

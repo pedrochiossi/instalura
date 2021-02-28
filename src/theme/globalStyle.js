@@ -7,12 +7,24 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box
   }
 
-  body {
+  ${normalize}
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
     background: ${({ theme }) => theme.colors.background.color};
     margin: 0;
     padding: 0;
     font-family: ${({ theme }) => theme.fontFamily}
   }
 
-  ${normalize}
+  #__next {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
 `;

@@ -3,6 +3,7 @@ import Logo from '../../../theme/Logo';
 import { MenuContainer } from './styles/MenuContainer';
 import Link from 'next/link';
 import { Button } from '../Button';
+import Text from '../../foundation/Text';
 
 
 export default function Menu() {
@@ -30,15 +31,17 @@ export default function Menu() {
       <MenuContainer.Center>
         {links.map(({ text, url}) => (
           <li key={url}>
-            <Link href={url}>
-              {text}
-            </Link>
+            <Text variant="smallestException" >
+              <Link href={url}>
+                {text}
+              </Link>
+            </Text>
           </li>
         ))}
       </MenuContainer.Center>
       <MenuContainer.Right>
         <Button ghost variant="secondary">
-          Entrar
+          <Text variant="smallestException">Entrar</Text>
         </Button>
         <Button variant="primary">
           Cadastrar
