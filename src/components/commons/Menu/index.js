@@ -1,26 +1,24 @@
-import React from 'react';
-import Logo from '../../../theme/Logo';
-import { MenuContainer } from './styles/MenuContainer';
-import Link from 'next/link';
-import { Button } from '../Button';
-import Text from '../../foundation/Text';
-
+import React from "react";
+import Logo from "../../../theme/Logo";
+import { MenuContainer } from "./styles/MenuContainer";
+import Link from "next/link";
+import { Button } from "../Button";
+import Text from "../../foundation/Text";
 
 export default function Menu() {
-
   const links = [
     {
-      text: 'Home',
-      url: '/'
+      text: "Home",
+      url: "/",
     },
     {
-      text: 'Perguntas frequentes',
-      url: '/faq'
+      text: "Perguntas frequentes",
+      url: "/faq",
     },
     {
-      text: 'Sobre',
-      url: '/sobre'
-    }
+      text: "Sobre",
+      url: "/sobre",
+    },
   ];
 
   return (
@@ -29,24 +27,26 @@ export default function Menu() {
         <Logo />
       </MenuContainer.Left>
       <MenuContainer.Center>
-        {links.map(({ text, url}) => (
+        {links.map(({ text, url }) => (
           <li key={url}>
-            <Text variant="smallestException" >
-              <Link href={url}>
-                {text}
-              </Link>
+            <Text variant="smallestException">
+              <Link href={url}>{text}</Link>
             </Text>
           </li>
         ))}
       </MenuContainer.Center>
       <MenuContainer.Right>
-        <Button ghost variant="secondary">
+        <Button
+          ghost
+          variant="secondary"
+        >
           Entrar
         </Button>
-        <Button variant="primary">
+        <Button
+          variant="primary">
           Cadastrar
         </Button>
       </MenuContainer.Right>
     </MenuContainer>
-  )
+  );
 }

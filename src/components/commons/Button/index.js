@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import get from 'lodash/get';
-import { breakpoints } from '../../../theme/utils/breakpoints';
+import {breakpoints, propToStyle } from '../../../theme/utils';
 import { TextStyleVariants } from '../../foundation/Text';
 
 const ButtonGhost = css`
@@ -16,7 +16,7 @@ const ButtonDefault = css`
 export const Button = styled.button`
   border: 0;
   cursor: pointer;
-  padding: 12px 26px;
+  padding: 10px 26px;
   font-weight: bold;
   opacity: 1;
   height: 44px;
@@ -28,14 +28,9 @@ export const Button = styled.button`
     opacity: .5;
   }
 
-  ${breakpoints({
-    xs: css`
-      /* All devices */
-      ${TextStyleVariants.smallestException}
-    `,
-    md: css`
-      /* From md breakpoint */
-      ${TextStyleVariants.paragraph1}
-    `
-  })}
+  ${TextStyleVariants.paragraph1Bold}
+
+  ${propToStyle('margin')};
+  ${propToStyle('display')};
+  ${propToStyle('height')};
 `;

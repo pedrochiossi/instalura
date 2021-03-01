@@ -1,6 +1,7 @@
 import { ThemeProvider } from 'styled-components'
 import {lightTheme, GlobalStyle } from '../src/theme';
 import Head from 'next/head';
+import { ViewportProvider } from '../src/context/viewport';
 
 export default function App({ Component, pageProps }) {
 
@@ -12,8 +13,10 @@ export default function App({ Component, pageProps }) {
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
       </Head>
       <ThemeProvider theme={lightTheme}>
-        <GlobalStyle />
-        <Component {...pageProps} />
+        <ViewportProvider>
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </ViewportProvider>
       </ThemeProvider>
     </>
   )
